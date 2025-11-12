@@ -13,24 +13,46 @@ pnpm dev
 # or
 bun dev
 ```
+App: https://clinic-app-sepia.vercel.app/
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Date: Nov 12 2025
+Tool: Google PageSpeed Insights (Mobile)
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+Metric	        Before	- After	 -Improvement
+Performance	    98	      100	    ✅ +2
+Accessibility	  93	      93	      —
+Best Practices	100     	100     	—
+SEO	            100	      100     	—
+FCP	            1.4 s   	0.8 s	  ✅ Faster
+LCP	            1.7 s     1.7 s   	—
+TBT	            10 ms	    0 ms	  ✅ Perfect
+CLS	            0       	0     	✅ Perfect
+Speed Index   	3.9 s	    0.8 s	  ✅ Much faster
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+Key Improvements Implemented
 
-## Learn More
+✅ Used next/image with WebP + AVIF for image optimization.
 
-To learn more about Next.js, take a look at the following resources:
+✅ Added dynamic imports (next/dynamic) for heavy components (Calendar, PatientList).
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+✅ Preloaded fonts and used font-display: swap.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+✅ Removed unused JavaScript and console logs.
 
-## Deploy on Vercel
+✅ Enabled compression & caching via Next config.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+✅ Added client-side JS obfuscation (webpack-obfuscator) for production build.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+✅ Moved viewport config to generate-viewport.ts (fixed metadata warnings).
+
+✅ Added subtle animations and micro-interactions using Framer Motion.
+
+Remaining To-Do
+
+ Add aria-label for icon buttons to improve Accessibility (target score 100).
+
+Attachments
+
+📎 pagespeed-before.png / .pdf
+
+📎 pagespeed-after.png / .pdf
